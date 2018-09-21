@@ -1,0 +1,37 @@
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $( "#addItem" ).submit(function(e) {
+            e.preventDefault();
+            var acc = $("#acc").val();
+            $("#accList").append("<tr><td>" + acc + "</td><td id='trash'>Trash?</td></tr>");
+            
+            return false;
+        });
+
+        $( "#trash" ).click(function(){
+            $(this).remove();
+        });
+
+    });
+</script>
+
+<body>
+    <form id="addItem">
+        <input id="acc" type="text" placeholder="What are you proud of?">
+        <button type="submit" value="Submit">Save</button>
+    </form>
+
+    <table id="accList">
+        <th>Task</th>
+        <th>Delete</th>
+
+    </table>
+
+
+</body>
+
+
+</html>
